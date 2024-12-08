@@ -22,6 +22,7 @@ const endSound = new Audio('end.mp3'); // 타이머 종료 소리 파일 경로
 const startSound = new Audio('start.mp3'); // 타이머 시작 소리 파일 경로
 const stopSound = new Audio('stop.mp3'); // 타이머 멈춤 소리 파일 경로
 const repeatSound = new Audio('repeat.mp3'); // 반복 버튼 클릭 시 재생될 소리
+const clickSound = new Audio('click.mp3'); // 조정 버튼 클릭 시 재생될 소리
 
 // 타이머 시작 함수
 const startTimer = () => {
@@ -167,6 +168,11 @@ repeatButton.addEventListener('click', () => {
 adjustButtons.forEach((button) => {
     button.addEventListener('click', () => {
         const adjustment = parseInt(button.getAttribute('data-adjust'), 10);
+
+        // 소리 재생
+        clickSound.play();
+
+        // 시간 조정
         adjustTime(adjustment);
     });
 });
