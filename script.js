@@ -133,6 +133,7 @@ const renderConditions = () => {
 
         // 삭제 버튼 클릭 이벤트 추가
         removeBtn.addEventListener('click', () => {
+            clickSound.play(); // 소리 재생
             conditions.splice(index, 1); // 해당 조건 제거
             renderConditions(); // 목록 업데이트
         });
@@ -178,7 +179,10 @@ adjustButtons.forEach((button) => {
 });
 
 // 조건 추가 버튼 클릭 이벤트
-addConditionBtn.addEventListener('click', addCondition);
+addConditionBtn.addEventListener('click', () => {
+    clickSound.play(); // 소리 재생
+    addCondition();
+});
 
 // 타이머 시작 버튼 클릭 이벤트
 startButton.addEventListener('click', startTimer);
