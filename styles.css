@@ -1,0 +1,203 @@
+/* Body 기본 스타일 */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    color: #333;
+}
+
+/* 타이머 컨테이너 */
+.timer-container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 타이머 디스플레이 */
+#timer-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 20px 0;
+}
+
+/* 버튼 기본 스타일 */
+button {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* 버튼 호버 효과 */
+button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 123, 255, 0.4);
+}
+
+/* 버튼 크기 고정 */
+.fixed-size-btn {
+    width: 70px; /* 고정된 너비 */
+    height: 50px; /* 고정된 높이 */
+    font-size: 0.9rem; /* 텍스트 크기 조정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    padding: 0; /* 내부 여백 제거 */
+    display: flex; /* 플렉스 박스 적용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+
+/* 타이머 조정 버튼 */
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.adjust-btn {
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+}
+
+.adjust-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(40, 167, 69, 0.4);
+}
+
+/* 조건 입력 섹션 */
+.condition-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+#condition-minutes,
+#condition-seconds {
+    width: 70px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#condition-minutes:focus,
+#condition-seconds:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* 조건 목록 */
+#conditions-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#conditions-list li {
+    margin: 5px 0;
+    font-size: 1rem;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* 삭제 버튼과 텍스트 분리 */
+    align-items: center; /* 삭제 버튼과 텍스트 중앙 정렬 */
+}
+
+
+/* 컨트롤 버튼 */
+.control-buttons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* 시작 버튼 */
+#start-btn {
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+}
+
+#start-btn:hover {
+    background: #218838;
+    box-shadow: 0 6px 10px rgba(40, 167, 69, 0.4);
+}
+
+/* 멈춤 버튼 */
+#pause-btn {
+    background: #ffc107;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(255, 193, 7, 0.3);
+}
+
+#pause-btn:hover {
+    background: #e0a800;
+    box-shadow: 0 6px 10px rgba(255, 193, 7, 0.4);
+}
+
+/* 반복 버튼 스타일 */
+#repeat-btn {
+    background: #ff4d4d; /* 초기 빨간색 (반복 중 상태) */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 77, 77, 0.3);
+}
+
+/* 반복 버튼 호버 효과 */
+#repeat-btn:hover {
+    background: #e63939; /* 빨간색 호버 효과 */
+}
+
+/* 반복 종료 상태 */
+#repeat-btn.not-repeating {
+    background: #007bff; /* 파란색 */
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+#repeat-btn.not-repeating:hover {
+    background: #0056b3; /* 파란색 호버 효과 */
+}

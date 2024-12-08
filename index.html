@@ -3,14 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3분 타이머</title>
+    <title>타이머 조정 및 제어</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="timer-container">
-    <h1>3분 타이머</h1>
+    <h1>타이머</h1>
     <div id="timer-display">03:00</div>
-    <button id="start-btn">타이머 시작</button>
+    <div class="timer-controls">
+        <button class="adjust-btn fixed-size-btn" data-adjust="1">+1초</button>
+        <button class="adjust-btn fixed-size-btn" data-adjust="10">+10초</button>
+        <button class="adjust-btn fixed-size-btn" data-adjust="60">+1분</button>
+        <button class="adjust-btn fixed-size-btn" data-adjust="600">+10분</button>
+        <button class="adjust-btn fixed-size-btn" data-adjust="-1">-1초</button>
+        <button class="adjust-btn fixed-size-btn" data-adjust="-10">-10초</button>
+        <button class="adjust-btn fixed-size-btn" data-adjust="-60">-1분</button>
+        <button class="adjust-btn fixed-size-btn" data-adjust="-600">-10분</button>
+    </div>
+    <div class="control-buttons">
+        <button id="start-btn">시작</button>
+        <button id="pause-btn">일시정지</button>
+        <button id="repeat-btn">반복 종료</button>
+    </div>
+
+    <div class="condition-controls">
+        <input type="number" id="condition-minutes" placeholder="분" />
+        <input type="number" id="condition-seconds" placeholder="초" />
+        <button id="add-condition-btn">조건 추가</button>
+    </div>
+    <ul id="conditions-list"></ul>
+
 </div>
 <script src="script.js"></script>
 </body>
