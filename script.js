@@ -107,6 +107,16 @@ alertSoundInput.addEventListener('change', (event) => {
         // 로컬 스토리지에서 파일 정보 제거
         localStorage.removeItem('alertSoundFileName');
         localStorage.removeItem('alertSoundFileData');
+
+        // 기본 알림음으로 설정
+        alertSound = new Audio('alert.mp3');
+        alertSound.volume = volumeSlider.value; // 현재 볼륨 적용
+        fileNameDisplay.textContent = 'alert.mp3'; // 기본 파일 이름 표시
+        playSoundButton.disabled = false; // 재생 버튼 활성화
+
+        // 로컬 스토리지에 기본 알림음 정보 저장
+        localStorage.setItem('alertSoundFileName', 'alert.mp3');
+        localStorage.setItem('alertSoundFileData', ''); // 기본값은 빈 데이터로 설정
     }
 });
 
