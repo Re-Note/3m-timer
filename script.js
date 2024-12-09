@@ -190,5 +190,12 @@ startButton.addEventListener('click', startTimer);
 // 타이머 일시정지 버튼 클릭 이벤트
 pauseButton.addEventListener('click', stopTimer);
 
+// 리셋 버튼 클릭 이벤트
+const resetButton = document.getElementById('reset-btn');
+resetButton.addEventListener('click', () => {
+    stopSound.play(); // 리셋 버튼 클릭 시 소리 재생
+    resetTimer(); // 타이머 초기화
+});
+
 // 초기 상태 설정
 resetTimer();
