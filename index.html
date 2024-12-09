@@ -27,14 +27,52 @@
         <button id="reset-btn">리셋</button>
     </div>
 
+    <div class="timer-settings" style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+        <!-- 알림음 변경 버튼과 볼륨 조절 -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+            <label class="custom-file-btn" for="alert-sound">알림음 변경</label>
+            <div class="volume-control" style="display: flex; align-items: center; gap: 10px;">
+                <label for="volume-slider">볼륨 조절:</label>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" style="width: 150px;">
+            </div>
+        </div>
+
+        <!-- 파일명과 재생 버튼 -->
+        <div style="display: flex; align-items: center; gap: 5px; justify-content: flex-start; width: 100%; max-width: 400px;">
+            <span class="file-name" id="file-name">선택된 파일 없음</span>
+            <button class="play-sound-btn" id="play-sound-btn" disabled>
+                <i class="play-icon">&#9658;</i>
+            </button>
+        </div>
+
+        <input type="file" id="alert-sound" accept="audio/mp3" style="display: none;">
+    </div>
+
     <div class="condition-controls">
         <input type="number" id="condition-minutes" placeholder="분" />
         <input type="number" id="condition-seconds" placeholder="초" />
         <button id="add-condition-btn">조건 추가</button>
     </div>
-    <ul id="conditions-list"></ul>
 
+    <ul id="conditions-list"></ul>
+    <!-- 데이터 리셋 버튼 -->
+    <div class="data-reset-container">
+        <button id="reset-data-btn">최신 버전 업데이트 및 데이터 리셋</button>
+    </div>
 </div>
+
+<!-- 모달 HTML 추가 -->
+<div id="custom-modal" class="modal">
+    <div class="modal-content">
+        <p>해당 기능은 저장된 설정을 초기화 하거나, 최신 버전으로 업데이트를 진행하기 위해 사용하는 기능입니다.</p>
+        <p>로컬 저장소에 저장된 내용을 초기화하고 강력 새로고침으로 캐시를 제거합니다. 진행하시겠습니까?</p>
+        <div class="modal-actions">
+            <button id="confirm-btn" class="confirm-btn">확인</button>
+            <button id="cancel-btn" class="cancel-btn">취소</button>
+        </div>
+    </div>
+</div>
+
 <script src="./script.js"></script>
 </body>
 </html>

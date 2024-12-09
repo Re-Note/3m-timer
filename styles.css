@@ -201,3 +201,188 @@ button:hover {
 #repeat-btn.not-repeating:hover {
     background: #0056b3; /* 파란색 호버 효과 */
 }
+
+/* 알림음 변경 섹션 스타일 */
+.timer-settings {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer-settings label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* 기본 파일 입력 숨기기 */
+#alert-sound {
+    display: none;
+}
+
+/* 커스텀 파일 선택 버튼 */
+.custom-file-btn {
+    background: #007bff; /* 파란색 배경 */
+    color: white; /* 글자 색상을 하얀색으로 설정 */
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+.custom-file-btn:hover {
+    background: #0056b3; /* 호버 시 더 어두운 파란색 */
+    transform: translateY(-2px); /* 눌리는 효과 */
+    box-shadow: 0 6px 10px rgba(0, 123, 255, 0.4);
+}
+
+/* 파일 이름 표시 영역 */
+.file-name {
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+    margin-left: 10px;
+    line-height: 20px; /* 높이를 재생 버튼과 동일하게 설정 */
+}
+
+/* 볼륨 조절 섹션 스타일 */
+.volume-control {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#volume-slider {
+    width: 100px; /* 슬라이더 너비 */
+    cursor: pointer;
+}
+
+/* 소리 재생 버튼 스타일 */
+.play-sound-btn {
+    background: #6c757d; /* 회색 배경 */
+    color: white;
+    width: 20px; /* 버튼 크기 (가로) */
+    height: 20px; /* 버튼 크기 (세로) */
+    padding: 0; /* 패딩 제거 */
+    border: none;
+    border-radius: 30%; /* 원형 버튼 */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: inline-flex; /* 파일명과 정렬을 위해 inline-flex 설정 */
+    align-items: center; /* 내부 아이콘 중앙 정렬 */
+    justify-content: center; /* 내부 아이콘 중앙 정렬 */
+    vertical-align: middle; /* 파일명과 수직 정렬 */
+}
+
+.play-sound-btn:hover {
+    background: #5a6268; /* 더 어두운 회색 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.play-sound-btn:disabled {
+    background: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* 재생 아이콘 스타일 */
+.play-icon {
+    font-size: 0.7rem; /* 아이콘 크기 축소 */
+    color: white;
+}
+
+/* 데이터 리셋 버튼 컨테이너 */
+.data-reset-container {
+    margin-top: 20px;
+    text-align: center; /* 버튼을 중앙 정렬 */
+}
+
+/* 데이터 리셋 버튼 스타일 */
+#reset-data-btn {
+    background: #dc3545; /* 빨간색 배경 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(220, 53, 69, 0.3);
+}
+
+#reset-data-btn:hover {
+    background: #c82333; /* 더 어두운 빨간색 */
+    box-shadow: 0 6px 10px rgba(220, 53, 69, 0.4);
+}
+
+/* 모달 기본 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.confirm-btn {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-btn:hover {
+    background: #e63939;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background: #5a6268;
+}
+
+
+
+
+
