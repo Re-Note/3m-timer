@@ -355,3 +355,26 @@ cancelButton.addEventListener('click', () => {
 
 // 초기 상태 설정
 resetTimer();
+
+// 키보드 단축키 이벤트 추가 (R 누르면 리셋 후 시작)
+window.addEventListener('keydown', (event) => {
+    // 사용자가 조건 입력창(input)에 값을 입력 중일 때는 단축키가 작동하지 않도록 방지
+    if (event.target.tagName === 'INPUT') return;
+
+    // 대문자 R 또는 소문자 r 키를 눌렀을 때
+    if (event.key === 'r' || event.key === 'R') {
+        event.preventDefault(); // 브라우저 기본 동작 방지 (필요 시)
+
+        // 1. 리셋 기능 수행
+        stopSound.play(); // 리셋 소리 재생
+        stopTimer();      // 타이머 정지
+        timeRemaining = initialTime; // 시간을 초기값으로 설정
+        renderConditions(); // 조건 목록 UI 업데이트
+        updateDisplay(timeRemaining); // 디스플레이 업데이트
+
+        // 2. 즉시 시작 기능 수행 (약간의 딜레이를 주어 리셋 소리와 겹치거나 씹히는 현상 방지)
+        setTimeout(() => {
+            startTimer();
+        }, 50);
+    }
+});
