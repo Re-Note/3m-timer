@@ -12,6 +12,7 @@ body {
 
 /* 타이머 컨테이너 */
 .timer-container {
+    position: relative; /* 우측 상단 버튼의 기준점이 됩니다 */
     text-align: center;
     background: white;
     padding: 30px;
@@ -20,6 +21,7 @@ body {
     max-width: 450px;
     width: 100%;
     box-sizing: border-box;
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* 부드러운 전환 효과 */
 }
 
 /* 타이머 디스플레이 */
@@ -382,7 +384,74 @@ button:hover {
     background: #5a6268;
 }
 
+.dark-mode-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+.dark-mode-btn:hover {
+    background: transparent;
+    transform: scale(1.2);
+    box-shadow: none;
+}
 
+/* 3. [신규 추가] 야간모드(Dark Mode) 활성화 시 스타일 */
+body.dark-mode {
+    /* 깊이감 있고 눈이 편안한 네이비-다크그레이 그라데이션 배경 */
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: #f0f0f0;
+}
+
+/* 야간모드에서의 카드 스타일 (명암 대비 강화) */
+body.dark-mode .timer-container {
+    background: #1e293b; /* 어두운 슬레이트 색상 */
+    /* 카드가 배경에서 확실히 떠오르게 하기 위해 더 짙고 넓은 그림자(명암) 적용 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+/* 야간모드 텍스트 및 입력창 조정 */
+body.dark-mode h1 {
+    color: #ffffff;
+}
+
+body.dark-mode #timer-display {
+    color: #38bdf8; /* 눈에 잘 띄는 시안 블루 계열 */
+}
+
+body.dark-mode .file-name,
+body.dark-mode .volume-control {
+    color: #cbd5e1;
+}
+
+body.dark-mode #condition-minutes,
+body.dark-mode #condition-seconds {
+    background: #334155;
+    border-color: #475569;
+    color: white;
+}
+
+/* 야간모드 조건 목록 아이템 */
+body.dark-mode #conditions-list li {
+    background: #334155;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 야간모드 모달창 내부 */
+body.dark-mode .modal-content {
+    background: #1e293b;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
 
 
 

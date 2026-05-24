@@ -328,13 +328,14 @@ const resetData = () => {
     localStorage.removeItem('alertSoundFileName');
     localStorage.removeItem('alertSoundFileURL');
     localStorage.removeItem('conditions');
+    localStorage.removeItem('theme'); // <-- 이 줄을 추가합니다.
 
     // 기본값 설정
-    alertSound = new Audio('alert.mp3'); // 기본 알림음으로 복원
-    conditions = [20]; // 기본 조건 복원
+    alertSound = new Audio('alert.mp3');
+    conditions = [20];
 
     // 강력 새로고침
-    window.location.reload(true); // 페이지 새로고침
+    window.location.reload(true);
 };
 
 // 데이터 리셋 버튼 클릭 이벤트
@@ -378,3 +379,30 @@ window.addEventListener('keydown', (event) => {
         }, 50);
     }
 });
+
+// script.js 최하단에 추가
+
+// 야간모드 요소 가져오기
+const darkModeButton = document.getElementById('dark-mode-btn');
+
+// 로컬 스토리지 상태 체크 후 초기 모드 적용
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    darkModeButton.textContent = '☀️'; // 야간모드일 때는 해 아이콘으로 변경
+}
+
+// 야간모드 토글 이벤트
+darkModeButton.addEventListener('click', () => {
+    clickSound.play(); // 기존 클릭 소리 재활용
+
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        darkModeButton.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'light');
+        darkModeButton.textContent = '🌙';
+    }
+});
+
