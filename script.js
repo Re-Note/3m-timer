@@ -197,9 +197,9 @@ const adjustTime = (adjustment) => {
 };
 
 // 로컬 스토리지에 조건 저장 함수
-const saveConditionsToLocalStorage = () => {
+function saveConditionsToLocalStorage() {
     localStorage.setItem('conditions', JSON.stringify(conditions));
-};
+}
 
 const addCondition = () => {
     const minutes = parseInt(conditionMinutesInput.value, 10) || 0;
